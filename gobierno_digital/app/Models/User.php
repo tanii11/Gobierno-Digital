@@ -19,8 +19,12 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
+
+use Spatie\Permission\Traits\HasRoles;
+
 class User extends Model
 {
+    use HasRoles;
     
     static $rules = [
 		'name' => 'required',

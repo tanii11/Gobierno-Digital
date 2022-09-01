@@ -6,6 +6,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 
 
 class UserSeeder extends Seeder
@@ -23,7 +26,7 @@ class UserSeeder extends Seeder
             'name' => 'Tania',
             'email' => 'tania@gmail.com',
             'password'=> bcrypt('tania1234')
-        ]);
+        ])->assignRole('Administrador');
 
         $arrays = range(0,14);
         foreach ($arrays as $valor) {
