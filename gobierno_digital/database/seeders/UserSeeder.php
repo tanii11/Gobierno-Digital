@@ -23,19 +23,20 @@ class UserSeeder extends Seeder
         //
 
         User::create([
-            'name' => 'Tania',
-            'email' => 'tania@gmail.com',
-            'password'=> bcrypt('tania1234')
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password'=> bcrypt('admin1234')
         ])->assignRole('Administrador');
 
-        $arrays = range(0,14);
+
+        $arrays = range(0,13);
         foreach ($arrays as $valor) {
             User::create([
                 'name' => Str::random(10),
-                'email' => Str::random(10),
-                'password'=> bcrypt(Str::random(10))
+                'email' =>  Str::random(10).'@gmail.com',
+                'password'=> bcrypt('password')
             ]);
-        }
+        } 
 
     }
 }

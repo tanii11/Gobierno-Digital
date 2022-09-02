@@ -16,6 +16,14 @@
             {{ Form::text('password', $user->password, ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' => 'Password']) }}
             {!! $errors->first('password', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        @foreach($roles as $role)
+            <div>
+                <label>
+                    {{ Form::radio('roles[]', $role->id, null, )}}
+                    {{$role->name}}
+                </label>
+            </div>
+        @endforeach
 
     </div>
     <div class="box-footer mt20">

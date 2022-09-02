@@ -15,6 +15,12 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <div>
+                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                    {{ __('Ver Usuarios') }}
+                                    </a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
